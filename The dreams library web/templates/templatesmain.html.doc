@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head><title>The Dreams Library - Principal</title></head>
+<body style="background-color: #0f0f0f; color: white; font-family: Arial; margin: 0; display: flex; height: 100vh;">
+    <!-- Contenido Principal -->
+    <div style="flex: 1; padding: 40px; text-align: center;">
+        <img src="/static/logo.jpeg" style="max-width: 200px; border-radius: 10px;" onerror="this.style.display='none'">
+        <h1 style="color: #e94560; font-family: 'Brush Script MT', cursive; font-size: 40px;">THE DREAMS LIBRARY</h1>
+        <h2>Bienvenido a la librería de tus sueños, {{ user }}</h2>
+        
+        <div style="margin-top: 40px;">
+            <a href="/books/all" style="background: #e94560; color: white; padding: 15px 30px; text-decoration: none; font-weight: bold; margin-right: 20px; border-radius: 5px;">MIS LIBROS</a>
+            
+            <form action="/upload" method="POST" enctype="multipart/form-data" style="display: inline-block; margin-top: 20px;">
+                <input type="file" name="epub_file" accept=".epub" required style="color: white;">
+                <button type="submit" style="background: #0f3460; color: white; padding: 12px 20px; border: none; font-weight: bold; border-radius: 5px; cursor: pointer;">CARGAR NUEVO EPUB</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Menú Lateral -->
+    <div style="width: 250px; background-color: #1a1a2e; display: flex; flex-direction: column; padding-top: 20px;">
+        <a href="/main" style="color: white; background: #0f3460; padding: 15px; text-decoration: none; margin: 10px; text-align: center; border-radius: 5px;">Pantalla Principal</a>
+        <a href="/books/all" style="color: white; background: #e94560; padding: 15px; text-decoration: none; margin: 10px; text-align: center; border-radius: 5px;">Mis Libros</a>
+        <a href="/books/favorites" style="color: white; background: #0f3460; padding: 15px; text-decoration: none; margin: 10px; text-align: center; border-radius: 5px;">Libros Preferidos</a>
+        <a href="/books/pending" style="color: white; background: #0f3460; padding: 15px; text-decoration: none; margin: 10px; text-align: center; border-radius: 5px;">Lista de Pendientes</a>
+        <a href="/logout" style="color: white; background: #cc3333; padding: 15px; text-decoration: none; margin: 30px 10px 10px 10px; text-align: center; border-radius: 5px;">Cerrar Sesión</a>
+    </div>
+</body>
+</html>

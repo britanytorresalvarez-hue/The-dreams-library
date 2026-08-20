@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head><title>The Dreams Library - Login</title></head>
+<body style="background-color: #0f0f0f; color: white; font-family: Arial; text-align: center; padding-top: 50px;">
+    <h1 style="color: #e94560; font-size: 50px; font-family: 'Brush Script MT', cursive;">THE DREAMS LIBRARY</h1>
+    <div style="background-color: #1a1a2e; display: inline-block; padding: 40px; border-radius: 10px; text-align: left;">
+        {% if error %}<p style="color: #cc3333;">{{ error }}</p>{% endif %}
+        {% if success %}<p style="color: #4bb543;">{{ success }}</p>{% endif %}
+        
+        <form method="POST">
+            <input type="hidden" name="action" value="{% if mode == 'register' %}register{% else %}login{% endif %}">
+            <label>Usuario:</label><br>
+            <input type="text" name="username" style="width: 250px; padding: 8px; margin: 5px 0; background: #2d2d2d; color: white; border: none;"><br><br>
+            <label>Contraseña:</label><br>
+            <input type="password" name="password" style="width: 250px; padding: 8px; margin: 5px 0; background: #2d2d2d; color: white; border: none;"><br><br>
+            
+            {% if mode == 'register' %}
+            <label>Correo:</label><br>
+            <input type="email" name="email" style="width: 250px; padding: 8px; margin: 5px 0; background: #2d2d2d; color: white; border: none;"><br><br>
+            <button type="submit" style="width: 100%; background: #e94560; color: white; padding: 10px; border: none; font-weight: bold;">REGISTRARSE</button>
+            <br><br><a href="/" style="color: #cccccc; text-decoration: none;">¿Ya tienes cuenta? Ingresa</a>
+            {% else %}
+            <button type="submit" style="width: 100%; background: #e94560; color: white; padding: 10px; border: none; font-weight: bold;">INGRESAR</button>
+            <br><br><a href="/?mode=register" style="color: #cccccc; text-decoration: none;">¿No tienes cuenta? Crear cuenta</a>
+            {% endif %}
+        </form>
+    </div>
+</body>
+</html>
